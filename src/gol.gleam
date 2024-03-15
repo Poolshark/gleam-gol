@@ -16,20 +16,13 @@ fn runner(
   case run_time <= total_time {
     True -> {
       case run_time {
-        0 -> {
-          print_grid(grid)
-          // process.sleep(intervall)
-          // let t = update_grid(grid, grid, 0, 0, grid_params)
-          // runner(t, run_time + intervall, intervall, total_time, grid_params)
-        }
+        0 -> Nil
         _ -> {
           io.print("\u{001b}[H\u{001b}[2J")
-          print_grid(grid)
-          // process.sleep(intervall)
-          // let t = update_grid(grid, grid, 0, 0, grid_params)
-          // runner(t, run_time + intervall, intervall, total_time, grid_params)
+          Nil
         }
       }
+      print_grid(grid)
       process.sleep(intervall)
       let t = update_grid(grid, grid, 0, 0, grid_params)
       runner(t, run_time + intervall, intervall, total_time, grid_params)
